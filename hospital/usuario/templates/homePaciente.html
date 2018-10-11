@@ -1,0 +1,70 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card pi-draggable shadow">
+                    <div class="card-body">
+                      <h3> Paciente: {{ user.first_name }} {{ user.last_name }}</h3>
+                      <p> Nombre de usuario: {{ user.username }}
+                        <br>Correo: {{ user.email }}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+        
+                        <!-- <iframe src="http://localhost:8080/demos/demo_audio_video_simple_hd.html" frameborder="0"></iframe> -->
+                        <div id="iam"></div>
+                        <div id="otherClients"></div>
+                        <video autoplay="autoplay" class="img-fluid d-block rounded" playsinline="playsinline"  id="selfVideo" muted="true"
+                          volume="0"></video>
+        
+                      </li>
+                      <li class="list-group-item">
+                        <a class="btn btn-primary btn-shadow" href="{% url 'logout' %}">Salir</a>
+                      </li>
+                    </ul>
+                  </div>
+            </div>
+            <div class="col-md-8">
+                <div class="row pi-draggable">
+                    <div class="col-md-2">
+                      <!--Columna invisible para ajustar el contenido-->
+                    </div>
+                    <div class="col-md-9">
+                      
+                      <h1 class="pi-draggable display-3 text-light ">Conversación</h1>
+                      <!--ROW DE LA CARD-->
+                        <video autoplay="autoplay" playsinline="playsinline" id="callerVideo" height="100%" width="100%" class="img-fluid d-block rounded"></video>
+                      <!--ROW DE LA CARD-->
+                    </div>
+                  </div>
+            </div>
+          </div>
+  
+  
+  
+      
+    </div>
+  </div>
+
+
+{% endif %}
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"></script>
+
+{% endblock %}

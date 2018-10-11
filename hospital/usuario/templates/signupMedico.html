@@ -1,0 +1,48 @@
+<!-- templates/signup.html -->
+
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+<div class="py-5 cover" >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="card shadow">
+            <div class="card-body">
+              <h4>!Regístrate para empezar¡</h4>
+              <form class="pi-draggable">
+                  {% csrf_token %}
+                <div class="form-group">
+                  <input class="form-control" id="username" maxlength="30" name="username" placeholder="Nombre de Usuario" type="text" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="first_name" maxlength="30" name="first_name" placeholder="Nombre" type="text" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="second_name" maxlength="30" name="second_name" placeholder="Apellido" type="text" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="email" maxlength="30" name="email" placeholder="Correo" type="text" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="password1" maxlength="30" name="password1" placeholder="Contraseña" type="text" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="password2" maxlength="30" name="password2" placeholder="Confirme contraseña" type="text" />
+                </div>
+                <input hidden id="is_medical" type="checkbox" name="is_medical" checked>
+                <button type="submit" class="btn btn-primary btn-shadow">Registrarse</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

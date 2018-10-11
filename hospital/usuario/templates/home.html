@@ -1,0 +1,39 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<body>
+        
+        <div class="py-5 text-center cover filter-color" style="background-image: url(static/7246889514_e91cafb17e_o.jpg); background-position: center; background-size:cover;">
+          <div class="container py-5">
+            <div class="row">
+              <div class="col-md-12 py-1">
+                <h1 class="display-3 mb-4 text-light">
+                  <b>Video conferencia médica</b>
+                </h1>
+                <a href="{% url 'login' %}" class="btn btn-lg mx-1 btn btn-shadow btn-light">Inicia sesión</a>
+                <h3 class="py-3">
+                        ¿Todavía no tienes cuenta?
+                        <br><br>!Regístrate¡
+                </h3>
+                
+                <a href="{% url 'registro-paciente' %}" class="btn btn-primary btn-shadow">Como paciente</a>  ó 
+                <a href="{% url 'registro-medico' %}" class="btn btn-dark btn-shadow btn-primary">Como médico</a>
+              </div>
+            </div>
+            <div class="row">
+              
+            </div>
+          </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+      </body>
+
+{% endblock %}
